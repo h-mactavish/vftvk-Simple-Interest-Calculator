@@ -1,6 +1,9 @@
 body {background-color:black;font-family: arial;color:white;}
 h1{color:grey;font-family: Verdana;}
-.maindiv{background-color: white;color:black;width: 300px;padding:20px;border-radius: 25px;align-self: center;}
-.form{margin:2px;}
+.maindiv{background-color: white;color:black;width: 30%;padding:30px;border-radius: 25px;}
+.contentdiv{width:80%;padding:2px;margin:10px auto}
+label { display: inline-block; width: 210px; text-align: left; }
+
+.form{margin:3px;}
 
 
