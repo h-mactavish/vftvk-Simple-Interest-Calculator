@@ -1,10 +1,6 @@
 //Submit button fucntionality
 function compute() {
-  var pricipal_amount = parseInt(
-    document.getElementById("principal").value,
-    10
-  ); //Converting principal amount to int for validation
-  //parsing of HTML Input tag
+  var pricipal_amount = document.getElementById("principal").value;
   var rate = document.getElementById("rate").value; //type string
   var years = document.getElementById("years").value; //type string
   var output = document.getElementById("s_range"); //Variable for setting span to dynamically change of rate value
@@ -13,10 +9,12 @@ function compute() {
   output.innerHTML = rate.value;
 
   //Self-Invoking function for principal validation
+  //Converting principal amount to int for validation parsing of HTML Input tag
   (function () {
-    if (pricipal_amount <= 0) {
+    if (parseInt(pricipal_amount, 10) <= 0 || pricipal_amount == "") {
       alert("Enter a positive number");
       document.getElementById("principal").focus(); //returns cursor to field
+      showVal(rate); //Fucntion call to help rate retain its value after submit call and dynamic updating of rate
       exit(); //To stop further script execution
     }
   })();
@@ -37,7 +35,7 @@ function compute() {
     "</mark>,<br> in the year " +
     year_Int;
   if (pricipal_amount) document.getElementById("result").innerHTML = result;
-  showVal(rate); //Fucntion call to help rate retain its value after submit call and dynamic updating of rate
+  showVal(rate);
 }
 
 //Function for dynamically updating and printing input's value
