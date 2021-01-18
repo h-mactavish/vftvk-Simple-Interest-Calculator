@@ -1,4 +1,8 @@
 function compute() {
+  var pricipal_amount = parseInt(
+    document.getElementById("principal").value,
+    10
+  );
   var rate = document.getElementById("rate").value;
   var years = document.getElementById("years").value;
   var output = document.getElementById("s_range");
@@ -7,7 +11,8 @@ function compute() {
   (function () {
     if (pricipal_amount <= 0) {
       alert("Enter a positive number");
-      return false;
+      document.getElementById("principal").focus();
+      exit();
     }
   })();
   var interest = (pricipal_amount * rate * years) / 100;
@@ -19,13 +24,13 @@ function compute() {
   var result =
     "If you deposit <mark>" +
     pricipal_amount +
-    "</mark>, at an interest rate of <mark>" +
+    "</mark>,<br>at an interest rate of <mark>" +
     rate +
-    "</mark>. You will receive an amount of <mark>" +
+    "</mark>.<br> You will receive an amount of <mark>" +
     interest +
-    "</mark>, in the year " +
+    "</mark>,<br> in the year " +
     year_Int;
-  document.getElementById("result").innerHTML = result;
+  if (pricipal_amount) document.getElementById("result").innerHTML = result;
   showVal(rate);
 }
 function showVal(newVal) {
