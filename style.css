@@ -1,5 +1,6 @@
-body {background-color:black;font-family: arial;font-color:white;}
+body {background-color:black;font-family: arial;color:white;}
 h1{color:grey;font-family: Verdana;}
-.maindiv{background-color: white;font-color:black;width: 300px;padding:20px;border-radius: 25px;align-self: center;}
+.maindiv{background-color: white;color:black;width: 300px;padding:20px;border-radius: 25px;align-self: center;}
+.form{margin:2px;}
 
 

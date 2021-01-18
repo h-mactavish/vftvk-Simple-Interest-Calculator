@@ -1,12 +1,33 @@
 function compute() {
-  var pricipal_amount = document.getElementById("principal").value;
   var rate = document.getElementById("rate").value;
-  var time = document.getElementById("years").value;
+  var years = document.getElementById("years").value;
   var output = document.getElementById("s_range");
   output.innerHTML = rate.value;
-  rate.oninput = function () {
-    output.innerHTML = this.value;
-  };
+  //console.log(typeof pricipal_amount);
+  (function () {
+    if (pricipal_amount <= 0) {
+      alert("Enter a positive number");
+      return false;
+    }
+  })();
+  var interest = (pricipal_amount * rate * years) / 100;
+  var date = new Date();
+  var curr_year = date.getFullYear();
 
-  var simple_interest = (pricipal_amount * rate * time) / 100;
+  var year_Int = curr_year + parseInt(years, 10);
+
+  var result =
+    "If you deposit <mark>" +
+    pricipal_amount +
+    "</mark>, at an interest rate of <mark>" +
+    rate +
+    "</mark>. You will receive an amount of <mark>" +
+    interest +
+    "</mark>, in the year " +
+    year_Int;
+  document.getElementById("result").innerHTML = result;
+  showVal(rate);
+}
+function showVal(newVal) {
+  document.getElementById("s_range").innerHTML = newVal;
 }
